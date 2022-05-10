@@ -11,11 +11,15 @@
 - Install [Maven](https://maven.apache.org/download.cgi), or use [Gradle](https://gradle.org/) instead
 - JDKs: please install newest 1.8 and 11-up versions, you can download some open-source JDKs by IntelliJ IDEA quickly
 - Install [Git](https://git-scm.com/) and using it
-- Missing some? ...
+- Missing something? ...
 
 ### 2. Development environments
 
 Setting your local development environments: modified bash/fish/zsh etc shell config file when using Linux or macOS; if you're using Windows, modify your settings from `MyComputer/ThisComputer` environment properties.
+
+>   If you are debugging in IDEA, you can modify environment variables from menu by click `RUN - Edit Configurations` submenu item.
+
+![environment_variables](docs/assets/20220510-135119@2x.png)
 
 ```bash
 # configurations for local environments 
