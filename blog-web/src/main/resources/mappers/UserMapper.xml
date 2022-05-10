@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.douyasi.tutorial.blog.domain.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.douyasi.tutorial.blog.domain.entity.User">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="locked" jdbcType="TINYINT" property="locked" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="getUser" resultType="com.douyasi.tutorial.blog.domain.entity.User" parameterType="java.lang.Long">
+        SELECT * FROM `user` WHERE id = #{id} LIMIT 1;
+    </select>
+    <select id="getUserByCredentials" resultType="com.douyasi.tutorial.blog.domain.entity.User">
+        SELECT * FROM `user` WHERE email = #{email} AND password = #{password} AND locked = 0 LIMIT 1;
+    </select>
+    <insert id="createUser" parameterType="com.douyasi.tutorial.blog.domain.entity.User">
+        INSERT INTO `user` (`name`, `email`, `password`, `locked`)
+        VALUES (#{user.name},
+                #{user.email},
+                #{user.password},
+                #{user.locked});
+    </insert>
+</mapper>

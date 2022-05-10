@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.douyasi.tutorial.blog.domain.dao.ArticleDao">
+    <resultMap id="BaseResultMap" type="com.douyasi.tutorial.blog.domain.entity.Article">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="content" jdbcType="LONGVARCHAR" property="content" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <sql id="allColumn">
+        `id`,
+        `user_id`,
+        `content`,
+        `create_time`,
+        `update_time`
+    </sql>
+    <sql id="whereCondition">
+        <trim prefix="WHERE" prefixOverrides="AND ">
+            <if test="userId != null">
+                AND `user_id` = #{userId}
+            </if>
+            <if test="listArticleIds != null and listArticleIds.size() > 0">
+                AND `id` IN
+                <foreach item="item" index="index"
+                         collection="listArticleIds" open="("
+                         separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="startTime != null">
+                AND `create_time` <![CDATA[ >= ]]> #{startTime}
+            </if>
+            <if test="endTime != null">
+                AND `create_time` <![CDATA[ <= ]]> #{endTime}
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND `content` LIKE "%"#{keyword}"%"
+            </if>
+        </trim>
+    </sql>
+    <select id="getArticle" resultType="com.douyasi.tutorial.blog.domain.entity.Article" parameterType="java.lang.Long">
+        SELECT
+        <include refid="allColumn"></include>
+        FROM `article`
+        WHERE id = #{id} LIMIT 1;
+    </select>
+    <select id="getUserArticle" resultType="com.douyasi.tutorial.blog.domain.entity.Article">
+        SELECT
+        <include refid="allColumn"></include>
+        FROM `article`
+        WHERE id = #{id} AND
+              user_id = #{userId}
+        LIMIT 1;
+    </select>
+    <select id="getArticlesByCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="allColumn"></include>
+        FROM `article`
+        <include refid="whereCondition"></include>
+        ORDER BY `create_time` DESC
+        <if test="offset >= 0 and limit > 0">
+            LIMIT #{limit} OFFSET #{offset}
+        </if>;
+    </select>
+    <select id="getArticlesCountByCondition" resultType="int">
+        SELECT
+        count(1)
+        FROM `article`
+        <include refid="whereCondition"></include>;
+    </select>
+    <insert id="createArticle">
+        INSERT INTO `article` (`user_id`, `content`)
+        VALUES (#{userId},
+                #{content});
+    </insert>
+
+    <update id="updateArticle">
+        UPDATE `article`
+            SET `content` = #{content}, `update_time` = DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s')
+        WHERE
+            `id` = #{id} AND
+            `user_id` = #{userId};
+    </update>
+    
+    <delete id="deleteArticle">
+        DELETE FROM `article`
+        WHERE
+            `id` = #{id} AND
+            `user_id` = #{userId};
+    </delete>
+</mapper>

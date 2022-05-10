@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.douyasi.tutorial.blog.domain.dao.AccessTokenDao">
+    <resultMap id="BaseResultMap" type="com.douyasi.tutorial.blog.domain.entity.AccessToken">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="token" jdbcType="VARCHAR" property="token" />
+        <result column="expired_at" jdbcType="INTEGER" property="expiredAt" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="getAccessTokenByToken" resultType="com.douyasi.tutorial.blog.domain.entity.AccessToken" parameterType="java.lang.Long">
+        SELECT * FROM `access_token` WHERE token = #{token} LIMIT 1;
+    </select>
+    <insert id="createAccessToken" parameterType="com.douyasi.tutorial.blog.domain.entity.AccessToken">
+        INSERT INTO `access_token` (`user_id`, `token`, `expired_at`)
+        VALUES (#{accessToken.userId},
+                #{accessToken.token},
+                #{accessToken.expiredAt});
+    </insert>
+</mapper>
