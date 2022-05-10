@@ -7,7 +7,7 @@
 
 - Have learned some basic knowledge about Java
 - Familiar with JetBrains IDEs, install its [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-- Have a good PC with Windows/Linux OS, or you have a macBook
+- Have a good PC with Windows/Linux OS, or you have a MacBook(Air/Pro) or other Apple desktop device
 - Install [Maven](https://maven.apache.org/download.cgi), or use [Gradle](https://gradle.org/) instead
 - JDKs: please install newest 1.8 and 11-up versions, you can download some open-source JDKs by IntelliJ IDEA quickly
 - Install [Git](https://git-scm.com/) and using it
