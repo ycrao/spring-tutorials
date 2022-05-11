@@ -26,6 +26,7 @@ Setting your local development environments: modified bash/fish/zsh etc shell co
 # values in example are as default
 export MYSQL_DB_HOST=localhost MYSQL_DB_PORT=3306 MYSQL_DB_USER=root MYSQL_DB_PASSWORD=root
 export REDIS_HOST=localhost REDIS_PORT=2379 REDIS_PASSWORD=
+export RABBITMQ_HOST=127.0.0.1 RABBITMQ_PORT=5672 RABBITMQ_USER=guest RABBITMQ_PASSWORD=guest
 ```
 
 ### 3. Enjoy
@@ -36,3 +37,4 @@ Clone this project and open it in IntelliJ IDEA. Then play with it by coding, de
 
 - [blog-web](blog-web/): a simple blog restful-api service with `mysql/redis/cache/swagger/...` supports.
 - [sample-task](sample-task/): using spring scheduling to handle some task and job.
+- [sample-messaging-rabbit](sample-messaging-rabbit/): sample code for message queue by using `RabbitMQ` .

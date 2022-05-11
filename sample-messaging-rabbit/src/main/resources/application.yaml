@@ -1,0 +1,42 @@
+spring:
+
+  # normal config
+  application:
+    name: sample-messaging-rabbit
+
+  # for jackson config
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      fail-on-empty-beans: false
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+# for server config
+server:
+  port: 16603
+
+  # for rabbitmq config
+  rabbitmq:
+    host: ${RABBITMQ_HOST:127.0.0.1}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    virtual-host: "/"
+
+# for logging config
+debug: true
+logging:
+  charset:
+    console: UTF-8
+  level:
+    root: WARN
+    org.springframework.security: DEBUG
+    org.springframework.boot.autoconfigure: ERROR
+    org.springframework.web: ERROR
+    # self package logging level
+    com.douyasi.tutorial.sample.messaging: DEBUG
+    #//pattern:
+    #// file: %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
+    #// console: %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
