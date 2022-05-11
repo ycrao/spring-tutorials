@@ -31,3 +31,8 @@ export REDIS_HOST=localhost REDIS_PORT=2379 REDIS_PASSWORD=
 ### 3. Enjoy
  
 Clone this project and open it in IntelliJ IDEA. Then play with it by coding, debugging or running...
+
+### INDEX
+
+- [blog-web](blog-web/): a simple blog restful-api service with `mysql/redis/cache/swagger/...` supports.
+- [sample-task](sample-task/): using spring scheduling to handle some task and job.

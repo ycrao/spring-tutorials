@@ -12,7 +12,7 @@
     <artifactId>blog-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>blog-web</name>
-    <description>Demo project for Spring Boot</description>
+    <description>A simple blog restful-api service with `mysql/redis/cache/swagger/...` supports</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

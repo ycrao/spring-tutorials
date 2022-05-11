@@ -1,0 +1,28 @@
+spring:
+
+  # normal config
+  application:
+    name: tutorial-sample-task
+
+  # for spring task scheduling
+  task:
+    scheduling:
+      thread-name-prefix: Task-Job-Thread-
+      pool:
+        size: 20
+
+
+    execution:
+      pool:
+        max-size: 16
+        queue-capacity: 100
+        keep-alive: 10s
+
+# for server config
+server:
+  port: 16602
+
+# user defined property
+project:
+  service:
+    type: task
