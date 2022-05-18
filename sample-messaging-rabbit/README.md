@@ -100,5 +100,5 @@ Just see code in [pubsub](./src/main/java/com/douyasi/tutorial/sample/messaging/
 
 ### How to test?
 
-I put message-pushing code in [controller/TestController](./src/main/java/com/douyasi/tutorial/sample/messaging/controller/TestController.java). You can visit `http://localhost:16603/test` and `http://localhost:16603/test-pub-sub` link after running the app. Then you will get some log in console stdout.
+I put message-pushing code in [controller/TestController](./src/main/java/com/douyasi/tutorial/sample/messaging/controller/TestController.java). You can visit `http://localhost:16603/test` and `http://localhost:16603/test-pub-sub` link after running the app. Then you will get some log in console stdout. Also, you can visit your RabbitMQ management dashboard, normal its url is `http://127.0.0.1:15672/#/queues` when installed on your local development machine.
 
