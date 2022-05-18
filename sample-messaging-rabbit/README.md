@@ -1,5 +1,9 @@
 # sample-messaging-rabbit
 
+### Official Reference
+
+- [Spring for RabbitMQ](https://docs.spring.io/spring-boot/docs/2.6.7/reference/htmlsingle/#boot-features-amqp)
+- [RabbitMQ](https://www.rabbitmq.com/)
 
 ### Config
 
@@ -98,7 +102,7 @@ Just see code in [worker](./src/main/java/com/douyasi/tutorial/sample/messaging/
 Just see code in [pubsub](./src/main/java/com/douyasi/tutorial/sample/messaging/rabbit/pubsub) directory.
 
 
-### How to test?
+### How to Testing?
 
 I put message-pushing code in [controller/TestController](./src/main/java/com/douyasi/tutorial/sample/messaging/controller/TestController.java). You can visit `http://localhost:16603/test` and `http://localhost:16603/test-pub-sub` link after running the app. Then you will get some log in console stdout. Also, you can visit your RabbitMQ management dashboard, normal its url is `http://127.0.0.1:15672/#/queues` when installed on your local development machine.
 
