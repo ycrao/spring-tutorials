@@ -2,6 +2,11 @@
 
 >   Put some spring tutorials here.
 
+### Play with GitHub codespaces
+
+See [play-with-codespaces](./play-with-codespaces.md) .
+
+Ref: [GitHub Codespaces overview](https://docs.github.com/en/codespaces/overview) .
 
 ### 1. Preparations
 

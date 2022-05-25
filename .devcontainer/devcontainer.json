@@ -31,7 +31,7 @@
 		"vscjava.vscode-java-pack"
 	],
 	"postCreateCommand": "java -version",
-	"forwardPorts": [16001,16002,16003],
+	"forwardPorts": [16601,16602,16603],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
