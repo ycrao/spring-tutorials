@@ -9,11 +9,11 @@ sudo service rabbitmq-server start
 sudo service mysql start
 ```
 
-| Service |  URI | Default Account |
-| ------- |  --- | --------------- |
-| Redis | 127.0.0.1:6379 | - (no auth, empty string) |
-| RabbitMQ | 127.0.0.1:5672 | guest:guest |
-| MySQL | localhost:3306 | root:"" (password is empty, you need to modify it) |
+| Service  | URI            | Default Account                                    |
+|----------|----------------|----------------------------------------------------|
+| Redis    | 127.0.0.1:6379 | - (no auth, empty string)                          |
+| RabbitMQ | 127.0.0.1:5672 | guest:guest                                        |
+| MySQL    | localhost:3306 | root:"" (password is empty, you need to modify it) |
 
 ### Access to Redis
 
@@ -32,7 +32,7 @@ $ sudo rabbitmq-plugins enable rabbitmq_management
 
 ### Access to MySQL
 
-You should using `sudo mysql -uroot` command to login in the MySQL server. Then we reate a new user with database.
+You should use `sudo mysql -uroot` command to log in the MySQL server. Then we create a new user with database.
 
 ```bash
 $ sudo mysql -uroot
