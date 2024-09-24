@@ -1,0 +1,4 @@
+# for server config
+server:
+  port: 16604
+

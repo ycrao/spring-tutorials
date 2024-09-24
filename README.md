@@ -43,3 +43,4 @@ Clone this project and open it in IntelliJ IDEA. Then play with it by coding, de
 - [blog-web](blog-web/): a simple blog restful-api service with `mysql/redis/cache/swagger/...` supports.
 - [sample-task](sample-task/): using spring scheduling to handle some task and job.
 - [sample-messaging-rabbit](sample-messaging-rabbit/): sample code for message queue by using `RabbitMQ` .
+- [hacker-suo5](hacker-suo5/): for hacker, expose web endpoint for [suo5](https://github.com/zema1/suo5) .
