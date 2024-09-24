@@ -17,7 +17,7 @@ Half ORM framework for Java, using XML definitions to mapper one-or-more SQL sta
 
 ### Swagger2 and API Documentation
 
-A api documentation tool with beautiful ui. Official website: https://swagger.io/ .
+An api documentation tool with beautiful ui. Official website: https://swagger.io/ .
 
 Using the newest Java library [springfox](https://github.com/springfox/springfox) to generate api document. You can visit `http://127.0.0.1:16601/api/t-blog/swagger-ui/index.html` after running blog-web application.
 
